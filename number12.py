@@ -33,3 +33,16 @@ for a in range(1,200):
         for c in range(1,200):
             if (4 + 4*(2 + a) == 24) and (8 + 4*(-4+b) == 16) and (12 + 4*(-5 + c) == 12):
                 print(a,b,c)
+#5727 поляков
+for n in range(20,100):
+    s = '3'*n + '2'*n + '1'*n
+    while '21' in s or '31' in s or '32' in s:
+        if '21' in s:
+            s = s.replace('21', '12', 1)
+        elif '31' in s:
+            s = s.replace('31', '13', 1)
+        elif '32' in s:
+            s = s.replace('32', '23', 1)
+    if s[49] == '2':
+        print(len(s))
+        break
