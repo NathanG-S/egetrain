@@ -8,7 +8,7 @@ for a in range(1, 2000):
     if ok:
         print(a)
         break
-        
+
 # 5722 поляков номер 5
 cnt = 0
 for N in range(1000, 10001):
