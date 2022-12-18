@@ -14,4 +14,5 @@ with open('index.html', encoding='utf-8') as file:
     src = file.read()
 
 soup = BeautifulSoup(src, 'lxml')
-section = soup.find(class_='section salaries')
+section = soup.find(class_='body')
+print(section)
