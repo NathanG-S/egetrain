@@ -1,4 +1,4 @@
-f = open('24.txt')
+'''f = open('24.txt')
 s = f.readline()
 for i in s:
     if i != 'K' and i != '0' and i != '1' and i != '2' and i != '3' and i != '4' and i != '5' and i != '6' and i != '7' and i != '8' and i != '9':
@@ -42,3 +42,23 @@ for i in range(len(s)):
         cts = 0
 
 print(sorted(counts)[-1])
+'''
+f = open('24-3.txt')
+s = f.readline().strip()
+s = s.split('.')
+#b = [j for j in s if j != '']
+m = len(s)
+
+for x in range(len(s)-7):
+    c = '.' + s[x] + '.' + s[x+1] + '.' +s[x+2] + '.' + s[x+3] + '.' + s[x+4] + '.' + s[x+5] + '.'
+    m = min(m, len(c))
+
+print(m)
+
+
+'''m = len(s) + 1
+for i in range(len(s)-6):
+    c = '.' + '.'.join(s[i:i+6]) + '.'
+    m = min(m, len(c))
+
+print(m)'''

@@ -1,4 +1,4 @@
-#15 номер
+# 15 номер
 for a in range(1, 2000):
     ok = True
     for x in range(1, 2000):
@@ -34,8 +34,8 @@ for word in words:
 print(len(set(set_words)))
 
 # 5727 поляков
-for n in range(20,100):
-    s = '3'*n + '2'*n + '1'*n
+for n in range(20, 100):
+    s = '3' * n + '2' * n + '1' * n
     while '21' in s or '31' in s or '32' in s:
         if '21' in s:
             s = s.replace('21', '12', 1)
@@ -47,7 +47,7 @@ for n in range(20,100):
         print(len(s))
         break
 
-#5605 номер 16
+# 5605 номер 16
 from sys import setrecursionlimit
 
 setrecursionlimit(10_000)
@@ -61,3 +61,20 @@ def f(n):
 
 
 print(f(4850) + f(5000))
+
+'''
+На числовой прямой даны два отрезка: P = [10, 29] и Q = [13, 18].
+
+Укажите наибольшую возможную длину отрезка A, для которого выражение
+
+((x ∈ A) → (x ∈ P)) ∨ (x ∈ Q)
+
+тождественно истинно, то есть принимает значение 1 при любом значении переменной х.
+'''
+p = [int(i) for i in range(10, 30)]
+q = [int(i) for i in range(13, 19)]
+a = [int(i) for i in range(10, 30)]
+for x in range(1, 100):
+    if not (((x in a) <= (x in p)) or (x in q)):
+        a.remove(x)
+print(len(a) - 1)
