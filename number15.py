@@ -78,3 +78,13 @@ for x in range(1, 100):
     if not (((x in a) <= (x in p)) or (x in q)):
         a.remove(x)
 print(len(a) - 1)
+
+for a in range(1000):
+    flag = True
+    for x in range(1000):
+        for y in range(1000):
+            if not ((x >= 27) or (2 * x < 3 * y) or (a > (x + 2) * (y - 3))):
+                flag = False
+    if flag:
+        print(a)
+        break
