@@ -3,15 +3,15 @@ from functools import lru_cache
 
 # 1 куча камней
 def moves(h):
-    return h + 1, h + 4, h * 5
+    return h + 1, h + 4, h * 4
 
 
 @lru_cache(None)
 def game(h):
-    if h >= 68: return 'W'
+    if h >= 78: return 'W'
     # if h > 60: return 'P1' запладка если есть ограничение в каком промежутке будет выигрыш
     if any(game(m) == 'W' for m in moves(h)): return 'P1'
-    if all(game(m) == 'P1' for m in moves(h)): return 'B1'  # Меняем на any если первый ход пети неудачный
+    if all(game(m) == 'P1' for m in moves(h)): return 'B1'  # Меняем на any если первый ход пети неудачный и ваня выиграл первым ходом
     if any(game(m) == 'B1' for m in moves(h)): return 'P2'
     if all(game(m) == 'P1' or game(m) == 'P2' for m in moves(h)): return 'B2'
 
