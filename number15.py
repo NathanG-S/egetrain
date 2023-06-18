@@ -79,12 +79,22 @@ for x in range(1, 100):
         a.remove(x)
 print(len(a) - 1)
 
-for a in range(1000):
+for a in range(1, 1000):
     flag = True
-    for x in range(1000):
-        for y in range(1000):
+    for x in range(1, 1000):
+        for y in range(1, 1000):
             if not ((x >= 27) or (2 * x < 3 * y) or (a > (x + 2) * (y - 3))):
                 flag = False
+    if flag:
+        print(a)
+        break
+# Обязательно бери range от (1, 1000) обязательно от 1 ведь 0 не натуральное число
+for a in range(1, 10000):
+    flag = True
+    for x in range(1, 1000):
+        if (((x % 13 == 0) <= (x % 21 != 0)) or (x + a >= 500)) == 0:
+            flag = False
+
     if flag:
         print(a)
         break
