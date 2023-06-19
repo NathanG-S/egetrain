@@ -1,4 +1,4 @@
-num = []
+"""num = []
 for x in range(10):
     for z in range(10):
         for y in range(10):
@@ -16,7 +16,7 @@ for i in range(124065, 12994966):
 print(sorted(num))
 new = [i/161 for i in sorted(num)]
 print(new)
-
+"""
 """
 1234065 7665
 12004965 74565
@@ -27,3 +27,8 @@ print(new)
 12874365 79965
 12954865 80465
 """
+from fnmatch import *
+
+for i in range(0, 10**8, 2023):
+    if fnmatch(str(i), '3?1*57'):
+        print(i, i//2023)

@@ -8,3 +8,7 @@ for i in f:
 
 print(count)
 
+x = [7, 1, 1, 1, 2, 8, 4]
+print(len(set(x)))
+print(sum(x) - 3 * ((sum(x) - sum(set(x))) / 2) ) # сумма неповторяющихся
+print((sum(x) - sum(set(x))) / 2) # повторяющееся число

@@ -62,22 +62,6 @@ def f(n):
 
 print(f(4850) + f(5000))
 
-'''
-На числовой прямой даны два отрезка: P = [10, 29] и Q = [13, 18].
-
-Укажите наибольшую возможную длину отрезка A, для которого выражение
-
-((x ∈ A) → (x ∈ P)) ∨ (x ∈ Q)
-
-тождественно истинно, то есть принимает значение 1 при любом значении переменной х.
-'''
-p = [int(i) for i in range(10, 30)]
-q = [int(i) for i in range(13, 19)]
-a = [int(i) for i in range(10, 30)]
-for x in range(1, 100):
-    if not (((x in a) <= (x in p)) or (x in q)):
-        a.remove(x)
-print(len(a) - 1)
 
 for a in range(1, 1000):
     flag = True
@@ -98,3 +82,46 @@ for a in range(1, 10000):
     if flag:
         print(a)
         break
+
+from itertools import product
+
+s = product('АГМНСТУ', repeat=6)
+cnt = 0
+for i in s:
+    x = ''.join(i)
+    cnt += 1
+    if x[0] != 'У' and (x.count('М') == 2) and (x.count('Г') <= 1):
+        print(cnt, x)
+
+# Наименьшую длину А
+
+"""На числовой прямой даны два отрезка: P = [20, 50] и Q = [30,65]. Отрезок A таков, что формул
+
+¬(x ∈ A) → ((x ∈ P) →¬ (x ∈ Q))
+
+истинна при любом значении переменной x. Какова наименьшая возможная длина отрезка A?"""
+
+p = [int(i) for i in range(20, 51)]
+q = [int(i) for i in range(30, 66)]
+a = set()
+for x in range(20, 100):
+    if not((x not in a) <= ((x in p) <= (x not in q))):
+        a.add(x)
+print(len(a) - 1)
+
+'''
+На числовой прямой даны два отрезка: P = [10, 29] и Q = [13, 18].
+
+Укажите наибольшую возможную длину отрезка A, для которого выражение
+
+((x ∈ A) → (x ∈ P)) ∨ (x ∈ Q)
+
+тождественно истинно, то есть принимает значение 1 при любом значении переменной х.
+'''
+p = [int(i) for i in range(10, 30)]
+q = [int(i) for i in range(13, 19)]
+a = [int(i) for i in range(10, 30)]
+for x in range(1, 100):
+    if not (((x in a) <= (x in p)) or (x in q)):
+        a.remove(x)
+print(len(a) - 1)
